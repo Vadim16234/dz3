@@ -12,16 +12,135 @@
 
 # ____________________решение____________________________
 
-import random
+# import random
 
-N = int(input('Введите размер массива: '))
-X = int(input('Введите число, которое будем искать в массиве: '))
-array = []
-for i in range(N):
-    array.append(random.randint(1, N))
-count = 0
-for i in array:
-    print(i)
-    if i == X:
-        count += 1
-print(f'Искомое число {X} встретилось {count} раз')
+# N = int(input('Введите размер массива: '))
+# X = int(input('Введите число, которое будем искать в массиве: '))
+# array = []
+# for i in range(N):
+#     array.append(random.randint(1, N))
+# count = 0
+# for i in array:
+#     print(i)
+#     if i == X:
+#         count += 1
+# print(f'Искомое число {X} встретилось {count} раз')
+
+
+
+
+
+# Задача 18:
+# Требуется найти в массиве A[1..N] самый близкий по величине элемент к заданному числу X. 
+# Пользователь вводит натуральное число N – количество элементов в массиве и число, 
+# которое необходимо проверить - X.
+# Заполните массив случайными натуральными числами от 1 до N.
+# Выведите, ближайший к X элемент. Если есть несколько элементов, которые равноудалены от X, 
+# выведите наименьший по величине.
+# Ввод: 10
+# Ввод: 7 
+# 1 2 1 8 9 6 5 4 3 4
+# Вывод: 6
+
+# ____________________решение____________________________
+
+
+# import random
+
+# N = int(input('Введите размер массива: '))
+# X = int(input('Введите число: '))
+
+# l = []
+
+# for num in range(0,N):
+#     random_number = round(random.randint(0,N))
+#     l.append(random_number)
+# print(l)
+# num = 0
+# numMax = 0
+# numMin = 0
+# for i in range(0, len(l)):
+#     if l[i] < X and l[i] > numMin:
+#         numMin = l[i]
+#     if l[i] > X:
+#         numMax = l[i]
+#         if numMax > X and numMax <= l[i]:
+#             numMax = l[i]
+#     if (X - numMin) == (numMax - X):
+#         num = numMin
+#     if (X - numMin) > (numMax - X):
+#         num = numMax
+#     if (X - numMin) < (numMax - X):
+#         num = numMin
+# print(f'Ближе всего число к числу {X} число {num}')
+
+
+
+
+
+
+# Задача 20:
+# В настольной игре Скрабл (Scrabble) каждая буква имеет определенную ценность. 
+# В случае с английским алфавитом очки распределяются так:
+# A, E, I, O, U, L, N, S, T, R – 1 очко;
+# D, G – 2 очка;
+# B, C, M, P – 3 очка;
+# F, H, V, W, Y – 4 очка;
+# K – 5 очков;
+# J, X – 8 очков;
+# Q, Z – 10 очков.
+# А русские буквы оцениваются так:
+# А, В, Е, И, Н, О, Р, С, Т – 1 очко;
+# Д, К, Л, М, П, У – 2 очка;
+# Б, Г, Ё, Ь, Я – 3 очка;
+# Й, Ы – 4 очка;
+# Ж, З, Х, Ц, Ч – 5 очков;
+# Ш, Э, Ю – 8 очков;
+# Ф, Щ, Ъ – 10 очков.
+# Напишите программу, которая вычисляет стоимость введенного пользователем слова. 
+# Будем считать, что на вход подается только одно слово, которое содержит либо только английские, 
+# либо только русские буквы.
+# Ввод: ноутбук
+# Вывод: 12
+
+# ____________________решение____________________________
+
+# letters = {
+#      "AEIOULNSTRАВЕИНОРСТ": 1,
+#      "DGДКЛМПУ": 2,
+#      "BCMPБГЁЬЯ": 3,
+#      "FHVWYЙЫ": 4,
+#      "KЖЗХЦЧ": 5,
+#      "JXШЭЮ": 8,
+#      "QZФЩЪ": 10
+#           }
+
+# user_word = input('Введите ваше слово: ')
+# eng_letter = []
+# rus_letter = []
+
+# while True:
+#     while len(user_word) == 0:
+#         user_word = input('Введите ваше слово (Поле не должно быт пустым): ')
+
+#     for i in user_word:
+#         if ord(i.upper()) in range(65, 91):
+#             eng_letter.append(ord(i.upper()))
+#         if ord(i.upper()) in range(1040, 1072):
+#             rus_letter.append(ord(i.upper()))
+#     if len(eng_letter) == len(user_word):
+#         print(f'Ваше слова на латинице, в нём {len(eng_letter)} букв(ы).')
+#         break
+#     elif len(rus_letter) == len(user_word):
+#         print(f'Ваше слова на кириллице, в нём {len(rus_letter)} букв(ы).')
+#         break
+#     else:
+#         user_word = input('Введите слово используя буквы одного из двух алфавитов (латиница, кириллица): ')
+
+# letters_sum = []
+
+# for i in user_word:
+#     for key in letters.keys():
+#          if i.upper() in key:
+#               letters_sum.append(letters[key])
+# print(f'Сумма букв вашего слова, согласно условию задачи: {sum(letters_sum)}')
